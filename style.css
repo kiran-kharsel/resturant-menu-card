@@ -25,8 +25,8 @@ body{
     justify-content: space-around;
 }
 
-.container .menu-type{
-    background-color: salmon;
+.container .menu-btns{
+    /* background-color: salmon; */
     width: 100%;
     display: flex;
     align-items: center;
@@ -34,13 +34,23 @@ body{
     gap: 30px;
 }
 
-.menu-type .type{
-    /* background-color: saddlebrown; */
-    text-align: center;
-    line-height: 40px;
-    padding: 10px;
+.menu-btns .menu-type{
+    background: transparent;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid tomato;
+    outline: 0;
+    border-radius: 8px;
+    color: black;
+    cursor: pointer;
 }
 
-.menu-type .type:hover{
-    border-bottom: 2px solid tomato;
+.menu-type:hover{
+    background-color: tomato;
+    color: white;
+}
+
+.menu-type.active{
+    background-color: tomato;
+    color: white;
 }
