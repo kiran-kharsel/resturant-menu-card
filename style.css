@@ -57,12 +57,12 @@ body{
 
 
 
-.container .item-title{
+.container .menu-title{
     width: 100%;
     position: relative;
 }
 
-.item-title .bar{
+.menu-title .bar{
     height: 3px;
     width: 100%;
     background-color: tomato;
@@ -74,7 +74,7 @@ body{
     border-radius: 2px;
 }
 
-.item-title .type{
+.menu-title .type{
     background-color: white;
     position: absolute;
     left: 50%;
@@ -87,10 +87,9 @@ body{
     justify-content: center;
     gap: 10px;
 }
-.type .icon{
-    font-size: 40px;
-}
-.type .menu-type{
+
+
+.type .menu{
     color: tomato;
     font-size: 24px;
     text-transform: capitalize;
@@ -105,6 +104,12 @@ body{
     flex-wrap: wrap;
     align-content: start;
     gap: 20px;
+    overflow: auto;
+    padding-top: 10px;
+}
+
+.menu-list::-webkit-scrollbar{
+    display: none;
 }
 
 .menu-list .menu-panel{

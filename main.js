@@ -9,6 +9,22 @@ const restaurantMenu = [
       "https://png.pngtree.com/png-clipart/20250221/original/pngtree-margherita-pizza-white-background-png-image_20491217.png",
   },
   {
+    title: "Margherita Pizza",
+    type: "Main Course",
+    price: 8.99,
+    ingredients: ["Tomato sauce","Mozzarella", "Basil", "Olive Oil", ],
+    imgSrc:
+      "https://png.pngtree.com/png-clipart/20250221/original/pngtree-margherita-pizza-white-background-png-image_20491217.png",
+  },
+  {
+    title: "Margherita Pizza",
+    type: "Main Course",
+    price: 8.99,
+    ingredients: ["Tomato sauce","Mozzarella", "Basil", "Olive Oil", ],
+    imgSrc:
+      "https://png.pngtree.com/png-clipart/20250221/original/pngtree-margherita-pizza-white-background-png-image_20491217.png",
+  },
+  {
     title: "Mango Smoothie",
     type: "Beverage",
     price: 4.0,
@@ -189,7 +205,7 @@ const restaurantMenu = [
 // elements
 const menuBtnList = document.querySelector(".menu-btns");
 const menuList = document.querySelector(".menu-list");
-const menuType = document.querySelector(".menu-type");
+const menuType = document.querySelector(".menu");
 
 // find meny types to crete button
 const typeFilterdArr = restaurantMenu.filter((item, index, self) => {
@@ -227,7 +243,6 @@ function showMenu(type) {
 
   // create panel
   restaurantMenu.forEach((item) => {
-    console.log(item.ingredients.join(', '))
     if (item.type == type) {
       let panel = document.createElement("div");
       panel.classList.add("menu-panel");
