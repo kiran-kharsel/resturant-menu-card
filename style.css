@@ -54,3 +54,45 @@ body{
     background-color: tomato;
     color: white;
 }
+
+
+
+
+.container .item-title{
+    /* background-color: aqua; */
+    width: 100%;
+    position: relative;
+}
+
+.item-title .bar{
+    height: 5px;
+    width: 100%;
+    background-color: tomato;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    z-index: -10;
+    border-radius: 2px;
+}
+
+.item-title .type{
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -55%);
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.type .icon{
+    font-size: 40px;
+}
+.type .type-title{
+    color: tomato;
+    font-size: 30px;
+    text-transform: capitalize;
+}
