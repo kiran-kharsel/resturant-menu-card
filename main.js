@@ -4,7 +4,8 @@ const restaurantMenu = [
     title: "Margherita Pizza",
     type: "Main Course",
     price: 8.99,
-    ingredients: ["Tomato Sauce", "Mozzarella", "Basil", "Olive Oil"],
+    // ingredients: ["Tomato Sauce", "Mozzarella", "Basil", "Olive Oil"],
+    ingredients: "Tomato Sauce, Mozzarella, Basil, Olive Oil",
   },
   {
     title: "Mango Smoothie",
@@ -54,7 +55,7 @@ const restaurantMenu = [
     price: 9.25,
     ingredients: [
       "Tortillas",
-      "Ground Beef",
+      "Ground-Beef",
       "Cheddar Cheese",
       "Lettuce",
       "Tomato",
@@ -150,15 +151,22 @@ const restaurantMenu = [
   },
 ];
 
-// 
+
+
+
+// elements 
+const menuBtnList = document.querySelector('.menu-btns');
+const menuList = document.querySelector('.menu-list')
+
+
+// find meny types to crete button
 const typeFilterdArr = restaurantMenu.filter((item, index, self) => {
     return index === self.findIndex((t) => t.type === item.type)
 });
 
 
 
-// elements 
-const menuBtnList = document.querySelector('.menu-btns')
+
 
 // create menu types buttons
 typeFilterdArr.forEach((item) => {
@@ -167,11 +175,30 @@ typeFilterdArr.forEach((item) => {
     btn.value = item.type;
     btn.innerText = item.type;
     menuBtnList.appendChild(btn);
-    btn,addEventListener('click', function(){})
+    btn.addEventListener('click', function(){
+        showMenu(item.type);
+    })
 })
 
 // show all menus on page load
 
-function showMenu(){
-
+function showMenu(type){
+    menuList.innerHTML = '';
+    restaurantMenu.forEach((item) => {
+        if(item.type === type){
+        let panel = document.createElement('div');
+        panel.classList.add('menu-panel');
+        panel.innerHTML = `
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc0WA3-hAfPNKRufqJie_XYizpsoZgWNHnOw&s" alt="">
+        <div class="desc">
+            <div>
+                <p class="title">${item.title}</p>
+                <p class="price">${item.price}$</p>
+            </div>
+            <p class="ingredients">${item.ingredients}</p>
+        </div>
+        `;
+        menuList.appendChild(panel)
+        }
+    })
 }
