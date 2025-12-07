@@ -151,44 +151,49 @@ const restaurantMenu = [
   },
 ];
 
-
-
-
-// elements 
-const menuBtnList = document.querySelector('.menu-btns');
-const menuList = document.querySelector('.menu-list')
-
+// elements
+const menuBtnList = document.querySelector(".menu-btns");
+const menuList = document.querySelector(".menu-list");
 
 // find meny types to crete button
 const typeFilterdArr = restaurantMenu.filter((item, index, self) => {
-    return index === self.findIndex((t) => t.type === item.type)
+  return index === self.findIndex((t) => t.type === item.type);
 });
-
-
-
-
 
 // create menu types buttons
 typeFilterdArr.forEach((item) => {
-    let btn = document.createElement('button');
-    btn.classList.add('menu-type');
-    btn.value = item.type;
-    btn.innerText = item.type;
-    menuBtnList.appendChild(btn);
-    btn.addEventListener('click', function(){
-        showMenu(item.type);
-    })
-})
+  let btn = document.createElement("button");
+  btn.classList.add("menu-type");
+  btn.value = item.type;
+  btn.innerText = item.type;
+  menuBtnList.appendChild(btn);
+  btn.addEventListener("click", function () {
+    showMenu(item.type);
+  });
+});
 
 // show all menus on page load
 
-function showMenu(type){
-    menuList.innerHTML = '';
-    restaurantMenu.forEach((item) => {
-        if(item.type === type){
-        let panel = document.createElement('div');
-        panel.classList.add('menu-panel');
-        panel.innerHTML = `
+function showMenu(type) {
+  // add active class to button
+  let btns = menuBtnList.querySelectorAll('button');
+  btns.forEach((btn) => {
+    if(btn.value == type){
+      btn.classList.add('active')
+    } else{
+      btn.classList.remove('active')
+    }
+  })
+
+  // clean menu list
+  menuList.innerHTML = "";
+
+  // create panel
+  restaurantMenu.forEach((item) => {
+    if (item.type == type) {
+      let panel = document.createElement("div");
+      panel.classList.add("menu-panel");
+      panel.innerHTML = `
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc0WA3-hAfPNKRufqJie_XYizpsoZgWNHnOw&s" alt="">
         <div class="desc">
             <div>
@@ -198,7 +203,9 @@ function showMenu(type){
             <p class="ingredients">${item.ingredients}</p>
         </div>
         `;
-        menuList.appendChild(panel)
-        }
-    })
+      menuList.appendChild(panel);
+    }
+  });
 }
+
+showMenu("Main Course");

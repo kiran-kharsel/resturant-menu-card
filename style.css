@@ -107,9 +107,8 @@ body{
     height: 500px;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    row-gap: 20px;
+    align-content: start;
+    gap: 20px;
 }
 
 .menu-list .menu-panel{
