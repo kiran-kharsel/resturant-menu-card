@@ -81,8 +81,10 @@ body{
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -55%);
-    padding: 5px 15px;
+    transform: translate(-50%, -50%);
+    /* padding: 5px 15px; */
+    height: 70px;
+    width: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -99,7 +101,6 @@ body{
 
 
 
-
 .menu-list{
     /* background-color: sandybrown; */
     width: 100%;
@@ -111,9 +112,33 @@ body{
 }
 
 .menu-list .menu-panel{
-    /* background-color: salmon;  */
     width: 380px;
+    height: 140px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    padding: 15px;
+    padding: 10px;
     border-radius: 5px;
+    border-bottom: 2px solid tomato;
+    display: flex;
+    align-items: center;
 }
+
+.menu-panel img{
+    width: 100px;
+}
+
+.menu-panel .desc{
+    /* background-color: navajowhite; */
+    height: 100%;
+    width: 100%;
+    padding: 15px;
+}
+
+.menu-panel .desc > div{
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+
